@@ -63,15 +63,8 @@ function showQuiz() {
         buttonEL.classList.add("A1")
         buttonEL.addEventListener("click", CorrectAnswers)
         answersEl.append(buttonEL)
-        //if(questionsQuiz[questionCounter].answers===questionsQuiz[questionCounter].correct) {
-        //console.log("Test")
-        //}
     }
-    //for (var i=0; i < questionsQuiz[questionCounter].answers.length;i++ ){
-    //if(questionsQuiz[questionCounter].answers===questionsQuiz[questionCounter].correct) {
-    //   console.log("Test")
-    //}
-    //}
+
 
 }
 
@@ -80,12 +73,17 @@ StartBTN.addEventListener("click", startTimer)
 
 function CorrectAnswers(event) {
     console.log("btn", event.target.textContent, questionCounter, questionsQuiz.length)
-    var UserAnswer=event.target.textContent
-    if(questionsQuiz[questionCounter].correct == UserAnswer){
-        document.getElementById("check").textContent===right
-        TotalScore+=5 
-    }else{
-        
+
+    var UserAnswer = event.target.textContent
+    if (questionsQuiz[questionCounter].correct == UserAnswer) {
+        document.getElementById("check").textContent === CorrectAnswers
+        TotalScore += 5
+    } else {
+        if (questionsQuiz[questionCounter].correct !== UserAnswer) {
+            document.getElementById("check").textContent !== CorrectAnswers
+            timerCount-=10
+        }
+
     }
     if (questionCounter < questionsQuiz.length - 1) {
         questionCounter++
