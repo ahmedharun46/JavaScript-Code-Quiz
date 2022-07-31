@@ -1,31 +1,35 @@
 var StartBTN = document.querySelector(".Start-Button");
 var QuizRules = document.querySelector(".Quiz-Info")
+//yo
+var timerClass = document.querySelector(".Timer")
 var timerSec = document.querySelector(".Timer-Sec")
 var timer;
 var timerCount = 60
 var TotalScore = 0
 var questionCounter = 0
 var questionsQuiz = [{
-    question: "What operator is used to access arrays ",
+    question: "What operator is used to access arrays (1)",
     answers: ["Brackets", "Quotations", "Parentheses", "Period"],
     correct: "Brackets"
 },
 {
-    question: "What is my name ",
+    question: "What is my name (2)",
     answers: ["Brackets", "Quotations", "Parentheses", "Period"],
     correct: "Brackets"
 },
 {
-    question: "What operator is used to access arrays --3",
+    question: "What operator is used to access arrays (3)",
     answers: ["Brackets", "Quotations", "Parentheses", "Period"],
     correct: "Brackets"
 },
 {
-    question: "What operator is used to access arrays --4",
+    question: "What operator is used to access arrays (4)",
     answers: ["Brackets", "Quotations", "Parentheses", "Period"],
     correct: "Brackets"
 }]
 function endgame() {
+
+    timerClass.remove()
 
 }
 function startTimer() {
@@ -33,7 +37,7 @@ function startTimer() {
     timer = setInterval(function () {
         timerCount--;
         timerSec.textContent = timerCount
-        if (timerCount === 0) {
+        if (timerCount <= 0) {
             endgame()
         }
     }, 1000);
@@ -53,7 +57,7 @@ function showQuiz() {
     var answersEl = document.querySelector(".answers")
     var Answers1 = document.querySelectorAll(".A1")
     if (Answers1) {
-        for (i = 0; i < Answers1.length - 1; i++) {
+        for (i = 0; i < Answers1.length; i++) {
             Answers1[i].remove()
         }
     }
@@ -85,9 +89,17 @@ function CorrectAnswers(event) {
         }
 
     }
-    if (questionCounter < questionsQuiz.length - 1) {
+    
+    //Quiz is not finshed
+    if(questionCounter <= questionsQuiz.length){
         questionCounter++
         console.log(questionCounter)
-        showQuiz()
+        showQuiz()    
+    } 
+    //Not finshed
+    else {
+        alert("Put a message here.")
+        console.log(questionCounter)
+        endgame()
     }
 }
