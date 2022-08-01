@@ -12,14 +12,14 @@ var questionsQuiz = [{
     correct: "Brackets"
 },
 {
-    question: "What is my name (2)",
-    answers: ["Brackets", "Quotations", "Parentheses", "Period"],
-    correct: "Brackets"
+    question: "What is used for string (2)",
+    answers: ["quotation", "paraentheses", "brackets", "period"],
+    correct: "quotation"
 },
 {
-    question: "What operator is used to access arrays (3)",
-    answers: ["Brackets", "Quotations", "Parentheses", "Period"],
-    correct: "Brackets"
+    question: "How do you return a element by ID (3)",
+    answers: ["getElementID", "querySelector", "appendChild", "addEventListner"],
+    correct: "getElementID"
 },
 {
     question: "What operator is used to access arrays (4)",
@@ -54,10 +54,7 @@ function showQuiz() {
         document.querySelector('.start-button').style.display = 'block'
         quizRules.style.display = 'block'
     }
-    // var highScoresSection = document.getElementById('high-scores')
-    // if (highScoresSection) {
-    //     highScoresSection.style.display = 'none'
-    // }
+   
     var questionEl = document.querySelector(".questions");
     var ele = document.querySelector(".h5q")
     if (ele) ele.remove()
@@ -92,10 +89,7 @@ function endgame() {
     document.getElementById('answers').style.display = 'none'
     document.getElementById('start-button').style.display = 'none'
     document.getElementById('all-done').style.display = 'block'
-    // startBtn.textContent = 'All Done'
-    // startBtn.classList.remove("start-button")
-    // startBtn.classList.add('All-Done')
-
+    
     resultsView()
 }
 
@@ -103,7 +97,6 @@ function endgame() {
 function correctAnswers(e) {
     var userAnswer = e.target.textContent
     var correctAnswer = questionsQuiz[questionCounter].correct
-    // userAnswer === correctAnswer ? totalScore += 5 : timerCount -=10 <-- ternary operator aka fancy if statement
     if (userAnswer === correctAnswer) {
         totalScore += 5
     } else {
@@ -116,7 +109,7 @@ function correctAnswers(e) {
         showQuiz()
     }
 }
-
+//Results Text Box 
 function resultsView() {
     var initials
     var contentSection = document.getElementById('content')
@@ -169,7 +162,3 @@ function highScores() {
 
     restartButton.addEventListener('click', startTimer)
 }
-
-// we need to add quiz rules
-// add the timer back
-// add the start button back
