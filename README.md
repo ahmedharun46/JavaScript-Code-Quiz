@@ -5,6 +5,7 @@ What was my motivation: To apply JavaScript and HTML to create a quiz. Use JavaS
 What I learend: Getting better with functions, variable use, and forloops. Getting use to querySelector and getElementByID. Much more JavaScript techniques which I'm getting better in using. 
 
 
-URL Link 
+URL Link https://ahmedharun46.github.io/JavaScript-Code-Quiz/
+
 
 Git Hub Link https://github.com/ahmedharun46/JavaScript-Code-Quiz
